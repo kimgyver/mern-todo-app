@@ -51,14 +51,10 @@ class CreateTodo extends Component {
         };
 
         axios.post(server_address + '/todos/add', newTodo)
-            .then(res => console.log(res.data));
-        
-        this.setState({
-            todo_description: '',
-            todo_responsible: '',
-            todo_priority: '',
-            todo_completed: false
-        })
+            .then(res => {
+                console.log(res.data); 
+                this.props.history.push('/');
+            });
     }
        
     render() {

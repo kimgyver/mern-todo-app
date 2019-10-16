@@ -55,8 +55,10 @@ class EditTodo extends Component {
         };
         console.log(obj);
         axios.post(server_address + '/todos/update/'+this.props.match.params.id, obj)
-            .then(res => console.log(res.data));
-        this.props.history.push('/');
+            .then(res => {
+                console.log(res.data);
+                this.props.history.push('/');
+            });
     }  
 
     componentDidMount() {
