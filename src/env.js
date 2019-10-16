@@ -1,1 +1,1 @@
-export const server_address = process.env.SERVER_URI || 'localhost';
+export const server_address = 'https://mern-todo-backend-jason.herokuapp.com/' || 'http://localhost';

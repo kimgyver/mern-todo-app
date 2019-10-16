@@ -54,13 +54,13 @@ class EditTodo extends Component {
             todo_completed: this.state.todo_completed
         };
         console.log(obj);
-        axios.post('http://' + server_address + ':4000/todos/update/'+this.props.match.params.id, obj)
+        axios.post(server_address + ':4000/todos/update/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
         this.props.history.push('/');
     }  
 
     componentDidMount() {
-        axios.get('http://' + server_address + ':4000/todos/'+this.props.match.params.id)
+        axios.get(server_address + ':4000/todos/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     todo_description: response.data.todo_description,

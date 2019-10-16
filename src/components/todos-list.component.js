@@ -18,14 +18,10 @@ class TodosList extends Component {
     constructor(props) {
         super(props);
         this.state = {todos: []};
-        const server_address_ = process.env.SERVER_URI || 'localhost';
-        console.log('process.env.SERVER_URI: ', process.env.SERVER_URI);
-        console.log("process.env.SERVER_URI || 'localhost': ", process.env.SERVER_URI || 'localhost');
-        console.log('server_address_: ', server_address_);
     }
 
     componentDidMount() {
-        axios.get('http://' + server_address + ':4000/todos/')
+        axios.get(server_address + ':4000/todos/')
             .then(response => {
                 this.setState({ todos: response.data });
             })
