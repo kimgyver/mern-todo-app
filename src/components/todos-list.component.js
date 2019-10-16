@@ -21,7 +21,7 @@ class TodosList extends Component {
     }
 
     componentDidMount() {
-        axios.get(server_address + ':4000/todos/')
+        axios.get(server_address + '/todos/')
             .then(response => {
                 this.setState({ todos: response.data });
             })

@@ -50,7 +50,7 @@ class CreateTodo extends Component {
             todo_completed: this.state.todo_completed
         };
 
-        axios.post(server_address + ':4000/todos/add', newTodo)
+        axios.post(server_address + '/todos/add', newTodo)
             .then(res => console.log(res.data));
         
         this.setState({
